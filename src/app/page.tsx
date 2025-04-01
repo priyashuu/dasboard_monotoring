@@ -1,11 +1,10 @@
-import React from 'react'
+import BraidpoolDashboard from "@/components/braidpool-dashboard"
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
-      h
-    </div>
+    <main className="min-h-screen bg-gray-950 text-gray-100">
+      <BraidpoolDashboard />
+    </main>
   )
 }
 
-export default page
