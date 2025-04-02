@@ -1,7 +1,10 @@
-# Braidpool-Monitoring-Dashboard
+# Braidpool Monitoring Dashboard
+
 ## Overview
 
-The Braidpool Monitoring Dashboard is a tool designed to provide real-time monitoring and analytics for your systems. It offers a user-friendly interface to track performance metrics, detect anomalies, and ensure system reliability.
+The **Braidpool Monitoring Dashboard** is a powerful tool designed to provide real-time monitoring and analytics for your systems. It offers a user-friendly interface to track performance metrics, detect anomalies, and ensure system reliability.
+
+---
 
 ## Features
 
@@ -9,29 +12,58 @@ The Braidpool Monitoring Dashboard is a tool designed to provide real-time monit
 - **Customizable Dashboards**: Tailor the interface to your specific needs.
 - **Alerts and Notifications**: Get notified of critical events instantly.
 - **Historical Data Analysis**: Review past performance trends.
+- **Interactive Visualizations**: Visualize Directed Acyclic Graphs (DAGs) with the Braid Visualization component.
+
+---
+
+## Technologies Used
+
+### Frontend
+- **React**: For building the user interface.
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: For styling and responsive design.
+- **D3.js**: For creating dynamic and interactive data visualizations.
+
+### Backend
+- **Next.js API Routes**: For server-side logic and API endpoints.
+
+### State Management
+- **React Hooks**: For managing component state.
+
+### Additional Libraries
+- **Radix UI**: For accessible and customizable UI components.
+- **React Hook Form**: For form validation and management.
+- **Zod**: For schema validation.
+- **D3.js**: For data-driven visualizations.
+
+---
 
 ## Installation
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/Braidpool-Monitoring-Dashboard.git
+    git clone https://github.com/yourusername/dashboard_monitoring-.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Braidpool-Monitoring-Dashboard
+    cd dashboard_monitoring
     ```
 3. Install dependencies:
     ```bash
-    npm install
+    pnpm install
     ```
-4. Start the application:
+4. build dependencies:
     ```bash
-    npm start
+    pnpm build
+    ```
+5. Start the application:
+    ```bash
+    pnpm start
     ```
 
 ## Usage
 
-1. Open your browser and navigate to `http://localhost:3000`.
+1. Open your browser and navigate to `http://localhost:4000`.
 2. Log in or create an account.
 3. Configure your monitoring preferences and start tracking.
 
