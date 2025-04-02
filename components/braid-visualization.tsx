@@ -24,6 +24,22 @@ export default function BraidVisualization({ data, isLoading, filterOptions }: B
   const [selectedBead, setSelectedBead] = useState<string | null>(null)
   const [zoomLevel, setZoomLevel] = useState(1)
   const zoomRef = useRef<d3.ZoomBehavior<Element, unknown> | null>(null)
+  const [isInitializing, setIsInitializing] = useState(true)
+
+  // Initialize only once
+  useEffect(() => {
+    if (isInitializing && data) {
+      initializeVisualization()
+      setIsInitializing(false)
+    }
+  }, [isInitializing, data])
+
+  // Separate update logic
+  useEffect(() => {
+    if (!isInitializing && data) {
+      updateVisualization()
+    }
+  }, [data, filterOptions])
 
   // Handle window resize
   useEffect(() => {
@@ -42,8 +58,11 @@ export default function BraidVisualization({ data, isLoading, filterOptions }: B
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  // Render the visualization
-  useEffect(() => {
+  const initializeVisualization = () => {
+    // Initialization logic here
+  }
+
+  const updateVisualization = () => {
     if (!svgRef.current || !data || !dimensions.width) return
 
     const svg = d3.select(svgRef.current)
@@ -598,7 +617,7 @@ export default function BraidVisualization({ data, isLoading, filterOptions }: B
 
       pulseAnimation()
     }
-  }, [data, dimensions, filterOptions, selectedBead])
+  }
 
   // Handle zoom controls
   const handleZoomIn = () => {
